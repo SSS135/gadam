@@ -2,11 +2,6 @@
 
 Optimizer for PyTorch which could be configured as Adam, AdaMax, AMSGrad or something in-between.
 
-When used with reinforcement learning (Atari + custom PPO implementation) it produces slightly better results than vanilla Adam. Though, I haven't done an extensive hyperparameter search.
-
-By default configured as torch.optim.Adam, except `late_weight_decay = True` as proposed in [Fixing Weight Decay Regularization in Adam](https://arxiv.org/abs/1711.05101)
-
-
 With `betas` = (beta1, 0) and `amsgrad_decay` = beta2 it will become AdaMax.
 
 With `amsgrad_decay` = 0 it will become [AMSGrad](https://openreview.net/forum?id=ryQu7f-RZ).
@@ -17,6 +12,9 @@ I've found it's better to use something in-between, like
    
 worked best for me, but I've seen good results with wide range of settings.
 
+By default configured as torch.optim.Adam, except `late_weight_decay = True` as proposed in [Fixing Weight Decay Regularization in Adam](https://arxiv.org/abs/1711.05101)
+
+When used with reinforcement learning (Atari + custom PPO implementation) it produces slightly better results than vanilla Adam. Though, I haven't done an extensive hyperparameter search.
 
 ## Usage
 ```python
