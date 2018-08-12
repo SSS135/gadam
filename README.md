@@ -45,5 +45,5 @@ GAdam(model.parameters(), lr=5e-4, betas=(0.9, 0.95), amsgrad_decay=0.05)
 * l1_decay (float, optional): L1 penalty (default: 0)
 * late_weight_decay (boolean, optional): Whether L1 and L2 penalty should be applied before (as proposed in [Fixing Weight Decay Regularization in Adam](https://arxiv.org/abs/1711.05101)) or after (vanilla Adam) normalization with gradient average squares (default: True)
 
-## Want to cooperate on making paper out of it?
+## Wish to cooperate on making a paper out of it?
 Feel free to write sss13594@gmail.com
