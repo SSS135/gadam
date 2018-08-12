@@ -1,3 +1,10 @@
+"""
+Generalization of Adam, AdaMax, AMSGrad algorithms (GAdam)
+Alexander Penkin, sss13594@gmail.com
+Based on PyTorch Adam optimizer.
+"""
+
+
 import math
 import torch
 import numpy as np
