@@ -1,7 +1,7 @@
 """
 Generalization of Adam, AdaMax, AMSGrad algorithms (GAdam)
+Based on PyTorch Adam optimizer
 Alexander Penkin, sss13594@gmail.com
-Based on PyTorch Adam optimizer.
 """
 
 
