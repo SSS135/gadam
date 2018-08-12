@@ -1,6 +1,15 @@
-# Generalization of Adam, AdaMax, AMSGrad algorithms
+# Generalization of Adam, AdaMax, AMSGrad algorithms (GAdam)
 
-Optimizer for PyTorch which could be configured as Adam, AdaMax, AMSGrad or something in-between.
+Optimizer for PyTorch which could be configured as Adam, AdaMax, AMSGrad or interpolate between them. Like AMSGrad, GAdam maintains maximum value of squared gradient for each parameter, but GAdam also does decay this value over time.
+
+
+When used with reinforcement learning (Atari + custom PPO implementation) it produces slightly better results than vanilla Adam. Though, I haven't done an extensive hyperparameter search.
+
+## Pseudocode
+
+![equation](http://quicklatex.com/cache3/8b/ql_77ad716480d29576a092a185002cb98b_l3.png)
+
+## Hyperparameters
 
 With `betas` = (beta1, 0) and `amsgrad_decay` = beta2 it will become AdaMax.
 
@@ -13,8 +22,6 @@ I've found it's better to use something in-between, like
 worked best for me, but I've seen good results with wide range of settings.
 
 By default configured as torch.optim.Adam, except `late_weight_decay = True` as proposed in [Fixing Weight Decay Regularization in Adam](https://arxiv.org/abs/1711.05101)
-
-When used with reinforcement learning (Atari + custom PPO implementation) it produces slightly better results than vanilla Adam. Though, I haven't done an extensive hyperparameter search.
 
 ## Usage
 ```python
